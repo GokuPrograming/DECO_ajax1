@@ -1,0 +1,59 @@
+/* Estilos generales */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.curso-card {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    margin: 10px;
+    width: calc(33.33% - 20px); /* Cada tarjeta ocupa el 33.33% del ancho */
+    text-align: center;
+    display: inline-block; /* Para mostrar las tarjetas en línea horizontal */
+    vertical-align: top; /* Alinear las tarjetas en la parte superior */
+}
+
+.curso-card:hover {
+    transform: translateY(-5px);
+}
+
+.link-tarjeta {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+/* Estilos para la imagen */
+.img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #eee;
+}
+
+/* Estilos para el contenido de la tarjeta */
+.contenido-tarjeta {
+    padding: 10px;
+}
+
+.titulo {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.cat-origen {
+    color: #777;
+    font-size: 14px;
+}
+
+.precio {
+    font-size: 16px;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+/* Añade estilos adicionales según tus necesidades */
