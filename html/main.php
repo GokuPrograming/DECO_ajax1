@@ -33,7 +33,7 @@
         }
         </script>
     </div>
-
+    <div></div>
     <h1 class="display-3 text-center titulo-sc p-3 p-md-5">Todos los productos</h1>
     <!-- MUESTRA TODOS LOS PRODUCTOS DEL CATALOGO-->
     <div class="container" id="app">
