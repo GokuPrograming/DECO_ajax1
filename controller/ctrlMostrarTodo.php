@@ -9,6 +9,7 @@ $carrito = new carrito();
 echo 'llego al controlador';
 if (isset($_GET['opc'])) {
     $opc = $_GET['opc'];
+    echo ($opc);
     switch ($opc) {
         case 1:
             if (isset($_SESSION["id_usuario"])) {
@@ -93,7 +94,7 @@ if (isset($_GET['opc'])) {
             }
             break;
 
-        case 4:
+        case 4://elimina un elemento del carrito
             $carrito = new carrito();
             $id_lista_cursos = $_POST['id_lista_cursos'];
             $idUser = $_SESSION["id_usuario"];
@@ -102,6 +103,34 @@ if (isset($_GET['opc'])) {
                 echo "eliminado";
             } else {
                 echo "El usuario no está definido";
+            }
+        case 5:
+            if (isset($_SESSION["id_usuario"])) {
+                $carrito = new Carrito(); // Asegúrate de que la clase Carrito esté definida
+                $idUser = $_SESSION["id_usuario"];
+
+                // Llama al método Total_pagar para obtener el total de compra
+                $totalCompra = $carrito->Total_pagar($idUser);
+
+                // Verifica si el total de compra es mayor que cero
+                if ($totalCompra > 0) {
+                   echo' <p>TOTAL A PAGAR:echo' . $totalCompra .'</p>';
+                echo '<input type="button" class="btn btn-danger" value="Comprar" onclick="comprarCarrito()">';
+
+                } else {
+                    // Puedes mostrar un mensaje si el total de compra es cero
+                    echo 'El carrito está vacío.';
+                }
+
+                break;
+            }
+            case 6:  if (isset($_SESSION["id_usuario"])) {
+                $carrito = new Carrito(); // Asegúrate de que la clase Carrito esté definida
+                $idUser = $_SESSION["id_usuario"];
+                echo'estamos en opc=';
+                // Llama al método Total_pagar para obtener el total de compra
+                $carrito->comprarCarrito($idUser);
+                break;
             }
     }
 }

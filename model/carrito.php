@@ -77,7 +77,7 @@ class carrito
         $carritoCursos = $this->obtenerCursosCarrito($id_usuario); // Asegúrate de pasar el ID del usuario
         if (empty($carritoCursos)) {
           //  echo "No hay cursos en el carrito. Agregue cursos antes de comprar.";
-          header("Location: ../html/carrito.php?CarritoVacio=1");  
+          //header("Location: ../html/carrito.php?CarritoVacio=1");  
           return;
         }
 
@@ -92,7 +92,7 @@ class carrito
             if ($rs->execute()) {
                 // La compra se ha registrado correctamente en la base de datos
                 echo "¡Compra registrada en la base de datos!";
-                header("Location: ../html/compraConcluida.php");
+               // header("Location: ../html/compraConcluida.php");
                // header("Location: ../html/main.php?comprado=1");
                 $this->eliminarCarrito($id_usuario);
             } else {
